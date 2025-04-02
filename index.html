@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Catálogo de Tintas</title>
-    <link rel="stylesheet" href="principal.css">
+    <link rel="stylesheet" href="./assets/styles/principal.css">
 </head>
 <body>
     <!-- Menu de Navegação -->
     <nav>
         <div class="logo">
-            <!-- Aqui você insere a logo como uma imagem -->
-            <a href="#"><img src="logo.png" alt="Minha Loja" class="logo-img"></a>
+            <a href="#"><img src="./assets/images/logo.png" alt="Minha Loja" class="logo-img"></a>
         </div>
         <ul class="menu">
-            <li><a href="#catalogo">Catálogo</a></li>
-            <li><a href="#carrinho">Carrinho</a></li>
-            <li><a href="#perfil">Perfil</a></li>
+            <li><a href="#catalogo"><img src="./assets/images/catalogo.png" alt="catálogo" class="catálogo-img"></a></li>
+            <li><a href="#carrinho"><img src="./assets/images/carrinho.png" alt="carrinho" class="carrinho"></a></li>
+            <li><a href="#perfil"><img src="./assets/images/perfil.png" alt="perfil" class="perfil"></a></li>
         </ul>
     </nav>
 
@@ -28,32 +27,22 @@
     <!-- Conteúdo Principal -->
     <section class="conteudo">
         <div class="foto-container">
-            <!-- Espaço para Adicionar Foto -->
-            <img src="anuncio.png" alt="anuncio" class="foto">
+            <img src="./assets/images/anuncio.png" alt="anuncio" class="foto">
         </div>
         
-        <!-- Catálogo de Tintas -->
-        <div id="catalogo" class="catalogo">
-            <h2>Catálogo de Tintas</h2>
-            <div class="produto">
-                <img src="tinta1.jpg" alt="Tinta 1">
-                <p>Tinta 1</p>
-            </div>
-            <div class="produto">
-                <img src="tinta2.jpg" alt="Tinta 2">
-                <p>Tinta 2</p>
-            </div>
-            <div class="produto">
-                <img src="tinta3.jpg" alt="Tinta 3">
-                <p>Tinta 3</p>
-            </div>
-            <!-- Adicione mais produtos conforme necessário -->
+        <h2 class="titulo-catalogo">NOSSAS TINTAS MAIS PROCURADAS</h2>
+        
+        <div class="catalogo-container">
+            <button class="prev" onclick="moverEsquerda()">&#10094;</button>
+            <div class="catalogo" id="catalogo"></div>
+            <button class="next" onclick="moverDireita()">&#10095;</button>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Minha Loja - Todos os direitos reservados.</p>
+        <p>&copy; 2025 Nossas Cores - Todos os direitos reservados.</p>
     </footer>
 
+    <script src="./assets/scripts/principal.js"></script>
 </body>
 </html>
