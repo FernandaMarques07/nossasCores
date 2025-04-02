@@ -1,0 +1,128 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para o corpo */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Menu de Navegação */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; /* Fundo branco */
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinha logo e menu verticalmente */
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adicionando sombra para destaque */
+    height: 60px; /* Definir altura fixa para a barra de navegação */
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo a {
+    display: inline-block;
+}
+
+nav .logo-img {
+    max-height: 50px; /* Ajusta a logo para que ela não ultrapasse essa altura */
+    width: auto;
+}
+
+/* Menu de Navegação - Itens */
+nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav .menu li a {
+    color: black; /* Cor do texto no menu */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav .menu li a:hover {
+    text-decoration: underline;
+}
+
+/* Frase de Efeito */
+.frase {
+    background-color: #8c52ff; /* Cor principal */
+    color: white;
+    text-align: center;
+    padding: 10px 20px; /* Diminuindo o padding para reduzir a altura da linha */
+    margin-top: 60px; /* Para não sobrepor o menu fixo */
+    line-height: 1.4; /* Ajustando a altura da linha para ser mais compacta */
+}
+
+.frase p {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0; /* Remove margens extras */
+}
+
+/* Foto de Anúncio (para cobrir toda a largura e sem margens) */
+.foto-container {
+    width: 100%;
+    margin: 0; /* Remove qualquer margem */
+    padding: 0; /* Remove qualquer padding */
+}
+
+.foto {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Faz a imagem cobrir toda a área */
+}
+
+/* Catálogo de Tintas */
+.catalogo {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.produto {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+
+.produto img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.produto p {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    margin-top: 50px;
+}
