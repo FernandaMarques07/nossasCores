@@ -18,15 +18,15 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: white; /* Fundo branco */
+    background-color: white;
     color: black;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Alinha logo e menu verticalmente */
+    align-items: center;
     padding: 10px 20px;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adicionando sombra para destaque */
-    height: 60px; /* Definir altura fixa para a barra de navegação */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 60px;
 }
 
 nav .logo {
@@ -39,7 +39,7 @@ nav .logo a {
 }
 
 nav .logo-img {
-    max-height: 50px; /* Ajusta a logo para que ela não ultrapasse essa altura */
+    max-height: 50px;
     width: auto;
 }
 
@@ -51,7 +51,7 @@ nav .menu {
 }
 
 nav .menu li a {
-    color: black; /* Cor do texto no menu */
+    color: black;
     text-decoration: none;
     font-size: 18px;
 }
@@ -62,31 +62,36 @@ nav .menu li a:hover {
 
 /* Frase de Efeito */
 .frase {
-    background-color: #8c52ff; /* Cor principal */
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    background-color: #8c52ff;
     color: white;
     text-align: center;
-    padding: 10px 20px; /* Diminuindo o padding para reduzir a altura da linha */
-    margin-top: 60px; /* Para não sobrepor o menu fixo */
-    line-height: 1.4; /* Ajustando a altura da linha para ser mais compacta */
+    padding: 8px 20px;
+    line-height: 1.4;
+    z-index: 999;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .frase p {
     font-size: 15px;
     font-weight: bold;
-    margin: 0; /* Remove margens extras */
+    margin: 0;
 }
 
-/* Foto de Anúncio (para cobrir toda a largura e sem margens) */
+/* Foto de Anúncio */
 .foto-container {
-    width: 100%;
-    margin: 0; /* Remove qualquer margem */
-    padding: 0; /* Remove qualquer padding */
+    margin-top: 100px;
 }
 
 .foto {
     width: 100%;
     height: auto;
-    object-fit: cover; /* Faz a imagem cobrir toda a área */
+    object-fit: cover;
 }
 
 /* Catálogo de Tintas */
@@ -96,6 +101,13 @@ nav .menu li a:hover {
     gap: 20px;
     flex-wrap: wrap;
     margin-top: 40px;
+}
+
+.titulo-catalogo {
+    text-align: center;
+    color: #555;
+    margin-top: 25px;
+    font-size: 15px;
 }
 
 .produto {
@@ -125,4 +137,184 @@ footer {
     background-color: #333;
     color: white;
     margin-top: 50px;
+}
+
+/* Estilo das setas de navegação */
+.catalogo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev, .next {
+    background-color: #8c52ff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.prev:hover, .next:hover {
+    background-color: #6e3bd1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Localização - Visite a Loja */
+.visite-loja {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin: 40px auto;
+    max-width: 1000px;
+    padding: 0 20px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.img-mapa {
+    align-self: flex-start;
+    max-width: 65%;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.img-visite {
+    align-self: flex-end;
+    max-width: 30%;
+    width: 100%;
+    height: auto;
+}
+
+/* --- Nova seção de estilos --- */
+
+.catalogo-estilos {
+    display: flex;
+    gap: 20px;
+    padding: 40px 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Destaque de Cores (Esquerda) */
+.destaque-cores {
+    flex: 1 1 50%;
+    min-width: 300px;
+    position: relative;
+}
+
+.imagem-destaque {
+    background-color: #3498db;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.texto-destaque {
+    color: white;
+    text-align: left;
+}
+
+.texto-destaque h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.texto-destaque p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.botao-destaque {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    color: white;
+    padding: 20px 30px;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+/* Grid de Tipos de Cores (Direita) */
+.tipos-cores-grid {
+    flex: 1 1 40%;
+    min-width: 280px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.bloco-cor {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 150px;
+}
+
+.cor-preview {
+    height: 70%;
+    background-color: #ddd; /* fallback para carregamento */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Imagens para os blocos de cores */
+.fosca .cor-preview {
+    background-image: url('imagens/fosca.jpg');
+}
+
+.acetinada .cor-preview {
+    background-image: url('imagens/acetinada.jpg');
+}
+
+.emborrachada .cor-preview {
+    background-image: url('imagens/emborrachada.jpg');
+}
+
+.semibrilhosa .cor-preview {
+    background-image: url('imagens/semibrilhosa.jpg');
+}
+
+.texto-bloco {
+    background-color: white;
+    padding: 10px 15px;
+    text-align: left;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.seta-bloco {
+    color: black;
+    font-size: 1.2em;
 }
