@@ -327,3 +327,70 @@ footer {
     color: black;
     font-size: 1.2em;
 }
+/* Estilo Catálogo*/
+.tintas-brilhantes {
+    margin: 20px;
+    text-align: center;
+}
+
+.titulo-catalogo {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.lista-tintas {
+    list-style-type: none;
+    padding: 0;
+}
+
+.produto {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.produto-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.detalhes {
+    flex-grow: 1;
+    padding: 0 10px;
+}
+
+.classificacao {
+    margin: 10px 0;
+}
+
+.estrela {
+    color: gold;
+    font-size: 1.2em;
+}
+
+.adicionar-carrinho {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.icone-carrinho {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.adicionar-carrinho:hover {
+    background-color: #218838;
+}
