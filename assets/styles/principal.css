@@ -39,7 +39,7 @@ nav .logo a {
 }
 
 nav .logo-img {
-    max-height: 50px;
+    max-height: 100px;
     width: auto;
 }
 
@@ -222,16 +222,23 @@ footer {
 }
 
 .imagem-destaque {
-    background-color: #3498db;
     height: 300px;
     display: flex;
     align-items: flex-end;
     padding: 20px;
+    background-image: url('../images/brilhantes.png'); /* Usando a imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .texto-destaque {
     color: white;
     text-align: left;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1; /* Garante que o texto fique sobre a imagem */
 }
 
 .texto-destaque h2 {
@@ -249,13 +256,15 @@ footer {
 
 .botao-destaque {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 20px;
+    right: 20px;
     background-color: black;
     color: white;
     padding: 20px 30px;
     font-size: 1.5em;
     text-decoration: none;
+    border-radius: 5px;
+    z-index: 2; /* Garantir que o botão fique sobre a imagem */
 }
 
 /* Grid de Tipos de Cores (Direita) */
@@ -289,19 +298,19 @@ footer {
 
 /* Imagens para os blocos de cores */
 .fosca .cor-preview {
-    background-image: url('imagens/fosca.jpg');
+    background-image: url('../images/fosca.png');
 }
 
 .acetinada .cor-preview {
-    background-image: url('imagens/acetinada.jpg');
+    background-image: url('../images/acetinada.png');
 }
 
 .emborrachada .cor-preview {
-    background-image: url('imagens/emborrachada.jpg');
+    background-image: url('../images/emborachada.png');
 }
 
 .semibrilhosa .cor-preview {
-    background-image: url('imagens/semibrilhosa.jpg');
+    background-image: url('../images/semibrilante.png');
 }
 
 .texto-bloco {
