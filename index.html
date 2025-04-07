@@ -13,7 +13,7 @@
             <a href="#"><img src="./assets/images/logo.png" alt="Minha Loja" class="logo-img"></a>
         </div>
         <ul class="menu">
-            <li><a href="#catalogo"><img src="./assets/images/catalogo.png" alt="catálogo" class="catálogo-img"></a></li>
+            <li><a href="#catalogoPrincipal"><img src="./assets/images/catalogo.png" alt="catálogo" class="catálogo-img"></a></li>
             <li><a href="#carrinho"><img src="./assets/images/carrinho.png" alt="carrinho" class="carrinho"></a></li>
             <li><a href="#perfil"><img src="./assets/images/perfil.png" alt="perfil" class="perfil"></a></li>
         </ul>
@@ -36,19 +36,18 @@
             <button class="seta prev" onclick="moverEsquerda()">&#x25C0;</button> <!-- seta para a esquerda -->
             <div class="catalogo" id="catalogo"></div>
             <button class="seta next" onclick="moverDireita()">&#x25B6;</button> <!-- seta para a direita -->
-            
         </div>
     </section>
 
     <section class="visite-loja">
         <img src="assets/images/localizacao.png" alt="Mapa da loja" class="img-mapa">
         <img src="assets/images/localizacao2.png" alt="Texto Visite nossa loja com pin" class="img-visite">
-      </section>
-      
-      <p>Endereço : Av.Imirim,1419 - Imirim , São Paulo - SP, 02464200</p>
-      <p>Telefone: (11)3542-6683</p>
+    </section>
+    
+    <p>Endereço : Av.Imirim,1419 - Imirim , São Paulo - SP, 02464200</p>
+    <p>Telefone: (11) 3542-6683</p>
 
-     <div class="catalogo-estilos">
+    <div class="catalogo-estilos">
         <div class="destaque-cores">
             <div class="imagem-destaque">
                 <div class="texto-destaque">
@@ -60,7 +59,7 @@
             <a href="#" class="botao-destaque">→</a>
         </div>
 
-        <div class="tipos-cores-grid">
+        <div class="tipos-cores-grid" id="catalogoPrincipal">
             <a href="#" class="bloco-cor fosca">
                 <div class="cor-preview"></div>
                 <div class="texto-bloco">Foscas <span class="seta-bloco">→</span></div>
@@ -79,6 +78,7 @@
             </a>
         </div>
     </div>
+    
     <footer>
         <p>&copy; 2025 Nossas Cores - Todos os direitos reservados.</p>
     </footer>
