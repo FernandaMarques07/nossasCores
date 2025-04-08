@@ -46,3 +46,21 @@
 .estrela:hover {
     color: #ffcc00;
 }
+
+/* Botão de Carrinho */
+.btn-carrinho {
+    background-color: #8c52ff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btn-carrinho:hover {
+    background-color: #6e3bd1;
+}
