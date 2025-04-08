@@ -65,3 +65,28 @@ function classificarProduto(produtoIndex, classificacao) {
 
 // Inicializa o catálogo
 renderCatalogo();
+
+// Função para renderizar os produtos no catálogo
+function renderCatalogo() {
+    const catalogo = document.getElementById('catalogo');
+    catalogo.innerHTML = ""; // Limpa o conteúdo do catálogo antes de adicionar os itens
+
+    produtos.forEach((produto, index) => {
+        const produtoDiv = document.createElement('div');
+        produtoDiv.classList.add('produto');
+        
+        // Monta o HTML para o produto
+        produtoDiv.innerHTML = `
+            <img src="${produto.imagem}" alt="${produto.nome}">
+            <p>${produto.nome}</p>
+            <div class="estrelas">
+                ${criarEstrelas(index)} <!-- Adiciona as estrelas para o produto -->
+            </div>
+            <button class="btn-carrinho" onclick="adicionarAoCarrinho(${index})">
+                Adicionar ao Carrinho
+            </button>
+        `;
+        
+        catalogo.appendChild(produtoDiv);
+    });
+}
