@@ -70,18 +70,10 @@ formCartao.addEventListener("submit", function (e) {
   }
 });
 
-// Tratamento do pagamento via Pix
-document.getElementById("confirmar-pix").addEventListener("click", () => {
-  // Aqui você pode implementar validações adicionais, se necessário.
-  alert("Pagamento realizado com sucesso via Pix! Pode ir à loja buscar a tinta.");
-  document.getElementById("form-pix").style.display = "none";
-  document.getElementById("opcoes-pagamento").style.display = "none";
-});
-
-// Tratamento do pagamento via Boleto
-document.getElementById("pagar-boleto").addEventListener("click", () => {
-  // Aqui simula-se a geração do boleto em um 'banco'.
-  alert("Boleto gerado com sucesso! Após o pagamento, pode ir à loja buscar a tinta.");
-  document.getElementById("form-boleto").style.display = "none";
-  document.getElementById("opcoes-pagamento").style.display = "none";
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("pagar-boleto").addEventListener("click", () => {
+    alert("Boleto gerado com sucesso! Após o pagamento, pode ir à loja buscar a tinta.");
+    document.getElementById("form-boleto").style.display = "none";
+    document.getElementById("opcoes-pagamento").style.display = "none";
+  });
 });

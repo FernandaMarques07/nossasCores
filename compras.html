@@ -56,12 +56,16 @@
       </tr>
     </table>
 
-    <a href="index.html#catalogoPrincipal" class="continuar">Continuar comprando</a>
+    <!-- Botão para continuar comprando -->
+<div class="continuar-container">
+  <button class="finalizar-btn" onclick="window.location.href='index.html#catalogoPrincipal'">Continuar comprando</button>
+</div>
 
-    <!-- Botão para finalizar a compra -->
-    <div class="finalizar-container">
-      <button class="finalizar-btn" onclick="mostrarPagamento()">Finalizar compra</button>
-    </div>
+<!-- Botão para finalizar a compra -->
+<div class="finalizar-container">
+  <button class="finalizar-btn" onclick="mostrarPagamento()">Finalizar compra</button>
+</div>
+
     
     <!-- Opções de pagamento (inicialmente ocultas) -->
     <div id="opcoes-pagamento" class="pagamento-opcoes" style="display: none;">
@@ -95,7 +99,7 @@
     <div id="form-boleto" style="display: none; margin-top: 20px;">
       <h3>Boleto Bancário</h3>
       <p><strong>Banco:</strong> Cores Brasil</p>
-      <p><strong>Vencimento:</strong>48 horas apos a emissão</p>
+      <p><strong>Vencimento:</strong>48 horas após a emissão</p>
       <p><strong>Código:</strong> 23793.38128 60000.000123 45678.901234 5 6789012345</p>
       <button id="pagar-boleto">Confirmar Pagamento</button>
     </div>
