@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <table>
+        <table id="tabela-carrinho">
             <tr>
                 <th class="arrow-cell">
                     Produto
@@ -41,48 +41,97 @@
                 <th>Quantidade</th>
                 <th>Valor</th>
             </tr>
-            <tr>
-                <td>
-                    <div class="produto-img">
-                        <img src="./assets/images/tinta.jpg" alt="Balde de Tinta">
-                    </div>
-                </td>
-                <td>
-                    <div class="quantidade">
-                        <button onclick="decrementQuantity()">-</button>
-                        <span id="quantity">1</span>
-                        <button onclick="incrementQuantity()">+</button>
-                    </div>
-                </td>
-                <td class="valor">R$<span id="total-price">60,00</span></td>
-            </tr>
+            <!-- Itens do carrinho serão inseridos aqui pelo JavaScript -->
         </table>
 
-        <div class="continuar">Continuar comprando</div>
+        <div class="total">
+            <span>Total:</span>
+            <span id="total-carrinho">R$ 0,00</span>
+        </div>
+
+        <div class="continuar" onclick="continuarComprando()">Continuar comprando</div>
+        <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
     </div>
 
     <script>
-        let quantity = 1;
-        const price = 60;
-
-        function updatePrice() {
-            const total = quantity * price;
-            document.getElementById('total-price').textContent = total.toFixed(2).replace('.', ',');
-        }
-
-        function incrementQuantity() {
-            quantity++;
-            document.getElementById('quantity').textContent = quantity;
-            updatePrice();
-        }
-
-        function decrementQuantity() {
-            if (quantity > 1) {
-                quantity--;
-                document.getElementById('quantity').textContent = quantity;
-                updatePrice();
+        function carregarCarrinho() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            const tabela = document.getElementById('tabela-carrinho');
+            const corpoTabela = document.createElement('tbody');
+            
+            // Limpa a tabela (exceto o cabeçalho)
+            while (tabela.rows.length > 1) {
+                tabela.deleteRow(1);
             }
+            
+            let total = 0;
+            
+            carrinho.forEach((item, index) => {
+                const linha = corpoTabela.insertRow();
+                
+                // Célula do produto
+                const celulaProduto = linha.insertCell(0);
+                celulaProduto.innerHTML = `
+                    <div class="produto-img">
+                        <img src="${item.imagem}" alt="${item.nome}">
+                        <span>${item.nome}</span>
+                    </div>
+                `;
+                
+                // Célula da quantidade
+                const celulaQuantidade = linha.insertCell(1);
+                celulaQuantidade.innerHTML = `
+                    <div class="quantidade">
+                        <button onclick="alterarQuantidade(${index}, -1)">-</button>
+                        <span>${item.quantidade}</span>
+                        <button onclick="alterarQuantidade(${index}, 1)">+</button>
+                    </div>
+                `;
+                
+                // Célula do valor
+                const valorTotal = item.preco * item.quantidade;
+                total += valorTotal;
+                
+                const celulaValor = linha.insertCell(2);
+                celulaValor.className = 'valor';
+                celulaValor.innerHTML = `R$ ${valorTotal.toFixed(2).replace('.', ',')}`;
+            });
+            
+            tabela.appendChild(corpoTabela);
+            document.getElementById('total-carrinho').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
         }
+        
+        function alterarQuantidade(index, delta) {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            
+            carrinho[index].quantidade += delta;
+            
+            if (carrinho[index].quantidade <= 0) {
+                carrinho.splice(index, 1);
+            }
+            
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            carregarCarrinho();
+        }
+        
+        function continuarComprando() {
+            window.location.href = 'brilhantess.html';
+        }
+        
+        function finalizarCompra() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            
+            if (carrinho.length === 0) {
+                alert('Seu carrinho está vazio!');
+                return;
+            }
+            
+            alert('Compra finalizada com sucesso! Redirecionando para a página de identificação...');
+            window.location.href = 'identificacao.html';
+        }
+        
+        // Carrega o carrinho quando a página é aberta
+        window.onload = carregarCarrinho;
     </script>
 </body>
 
