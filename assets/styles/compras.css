@@ -224,3 +224,42 @@ td:not(:first-child) {
 .btn-finalizar:hover {
     background-color: #5a00d0;
 }
+
+.finalizar-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6a00ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.pagamento-opcoes {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagamento-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color:  #6a00ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.pagamento-btn:hover {
+    background-color: #6a00ff;
+}
+
+.finalizar-container {
+    text-align: right;
+    margin-top: 20px;
+}
+
+
+

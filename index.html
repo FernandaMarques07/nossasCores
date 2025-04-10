@@ -1,66 +1,94 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Carrinho</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Catálogo de Tintas</title>
     <link rel="stylesheet" href="./assets/styles/principal.css">
-    <link rel="stylesheet" href="./assets/styles/compras.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <div class="container">
-        <h1>CARRINHO</h1>
+    <!-- Menu de Navegação -->
+    <nav>
+        <div class="logo">
+            <a href="./index.html"><img src="./assets/images/logo.png" alt="Minha Loja" class="logo-img"></a>
+        </div>
+        <ul class="menu">
+            <li><a href="#catalogoPrincipal"><img src="./assets/images/catalogo.png" alt="catálogo" class="catálogo-img"></a></li>
+            <li><a href="compras.html"><img src="./assets/images/carrinho.png" alt="carrinho" class="carrinho"></a></li>
+            <li><a href="#perfil"><img src="./assets/images/perfil.png" alt="perfil" class="perfil"></a></li>
+        </ul>
+    </nav>
 
-        <div class="steps">
-            <div class="step active">
-                <div class="step-circle">1</div>
-                Carrinho
+    <!-- Frase de Efeito -->
+    <section class="frase">
+        <p>Que tal renovar um cantinho da sua casa? Use Nossas Cores.</p>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <section class="conteudo">
+        <div class="foto-container">
+            <img src="./assets/images/anuncio.png" alt="anuncio" class="foto">
+        </div>
+        
+        <h2 class="titulo-catalogo">NOSSAS TINTAS MAIS PROCURADAS</h2>
+        
+        <div class="catalogo-container">
+            <button class="seta prev" onclick="moverEsquerda()">&#x25C0;</button> <!-- seta para a esquerda -->
+            <div class="catalogo" id="catalogo"></div>
+            <button class="seta next" onclick="moverDireita()">&#x25B6;</button> <!-- seta para a direita -->
+        </div>
+    </section>
+
+    <section class="visite-loja">
+        <img src="assets/images/localizacao.png" alt="Mapa da loja" class="img-mapa">
+        <img src="assets/images/localizacao2.png" alt="Texto Visite nossa loja com pin" class="img-visite">
+    </section>
+    
+    <p>
+        Endereço: 
+        <a href="https://www.google.com/maps?q=Av.+Imirim,+1419,+São+Paulo,+SP" target="_blank" style="color: #6a00ff; text-decoration: underline;">
+          Av. Imirim, 1419 - Imirim, São Paulo - SP, 02464-200
+        </a>
+      </p>
+      
+    <p>Telefone: (11) 3542-6683</p>
+
+    <div class="catalogo-estilos">
+        <div class="destaque-cores">
+            <div class="imagem-destaque">
+                <div class="texto-destaque">
+                    <h2>DESCUBRA</h2>
+                    <h2>NOSSAS CORES</h2>
+                    <p>Cores brilhantes</p>
+                </div>
             </div>
-            <div class="step">
-                <div class="step-circle">2</div>
-                Identificação
-            </div>
-            <div class="step">
-                <div class="step-circle">3</div>
-                Pagamento
-            </div>
-            <div class="step">
-                <div class="step-circle">4</div>
-                Concluído
-            </div>
+            <a href="brilhantes.html" class="botao-destaque">→</a>
         </div>
 
-        <table>
-            <tr>
-                <th class="arrow-cell">
-                    Produto
-                    <div class="arrow-head"></div>
-                </th>
-                <th>Quantidade</th>
-                <th>Valor</th>
-            </tr>
-            <tr>
-                <td>
-                    <div class="produto-img">
-                        <img src="./assets/images/tinta.jpg" alt="Balde de Tinta">
-                    </div>
-                </td>
-                <td>
-                    <div class="quantidade">
-                        <button onclick="decrementQuantity()">-</button>
-                        <span id="quantity">1</span>
-                        <button onclick="incrementQuantity()">+</button>
-                    </div>
-                </td>
-                <td class="valor">R$<span id="total-price">60,00</span></td>
-            </tr>
-        </table>
-
-        <div class="continuar">Continuar comprando</div>
+        <div class="tipos-cores-grid" id="catalogoPrincipal">
+            <a href="foscas.html" class="bloco-cor fosca">
+                <div class="cor-preview"></div>
+                <div class="texto-bloco">Foscas <span class="seta-bloco">→</span></div>
+            </a>
+            <a href="acetinadas.html" class="bloco-cor acetinada">
+                <div class="cor-preview"></div>
+                <div class="texto-bloco">Acetinadas <span class="seta-bloco">→</span></div>
+            </a>
+            <a href="emborrachadas.html" class="bloco-cor emborrachada">
+                <div class="cor-preview"></div>
+                <div class="texto-bloco">Emborrachada <span class="seta-bloco">→</span></div>
+            </a>
+            <a href="semibrilhosas.html" class="bloco-cor semibrilhosa">
+                <div class="cor-preview"></div>
+                <div class="texto-bloco">Semibrilhosas <span class="seta-bloco">→</span></div>
+            </a>
+        </div>
     </div>
+    
+    <footer>
+        <p>&copy; 2025 Nossas Cores - Todos os direitos reservados.</p>
+    </footer>
 
-    <script src="./assets/scripts/compras.js"></script>
+    <script src="./assets/scripts/principal.js"></script>
 </body>
 </html>
