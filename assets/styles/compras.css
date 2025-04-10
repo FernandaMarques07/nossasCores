@@ -174,3 +174,53 @@ td:not(:first-child) {
     font-weight: bold;
     color: #333;
 }
+
+/* Estilos adicionais para o carrinho */
+
+.produto-img {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: auto;
+}
+
+.produto-img img {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.produto-img span {
+    font-weight: bold;
+    color: #333;
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.btn-finalizar {
+    background-color: #6a00ff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    float: right;
+    transition: background-color 0.3s;
+}
+
+.btn-finalizar:hover {
+    background-color: #5a00d0;
+}
