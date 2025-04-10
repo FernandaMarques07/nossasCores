@@ -1,0 +1,79 @@
+body {
+  padding-top: 100px;
+}
+
+h1 {
+  color: #6a0dad;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.confirmation-container {
+  max-width: 100%;
+  box-sizing: border-box;
+  /* Adicionado padding igual em ambos os lados */
+}
+.data-group {
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: #d3d3d3;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box; /* Garante que padding não afete a largura */
+}
+.data-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.data-label {
+  font-weight: bold;
+  color: #4b0082;
+  font-size: 16px;
+  min-width: 120px;
+}
+.data-value {
+  flex-grow: 1;
+  padding: 10px;
+  background-color: d3d3d3;
+  color: #333;
+  font-size: 16px;
+  width: 100%
+}
+.confirmation-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+.btn {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s;
+  flex: 1;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.btn-confirm {
+  background-color: #8a2be2;
+  color: white;
+}
+.btn-confirm:hover {
+  background-color: #9932cc;
+}
+.btn-edit {
+  background-color: #e0e0e0;
+  color: #333;
+}
+.btn-edit:hover {
+  background-color: #d0d0d0;
+}
+.perfil {
+  display: flex;
+  justify-content: center;
+}
