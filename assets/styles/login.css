@@ -1,0 +1,138 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    background: #ffffff;
+}
+
+.image-box {
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;   /* Alinha à direita */
+    align-items: center;         /* Centraliza verticalmente */
+    padding-right: 0;            /* Remova espaço extra */
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-direita {
+    max-width: 100%;
+    width: 90%;
+    height: 75%;
+    object-fit: contain;
+    margin-right: 0;
+    display: block;
+} 
+
+/* Login - lado direito (formulário) */
+.right-side {
+    width: 60%;
+    background: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.login-box {
+    width: 40%;
+    background: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+form {
+    width: 100%;
+    max-width: 300px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 2px solid #a78bfa;
+    border-radius: 10px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #6a5acd, #7b68ee);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #4834D4;
+}
+
+.forgot-password,
+.register-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #6C5CE7;
+    text-decoration: none;
+}
+
+.forgot-password:hover,
+.register-link:hover {
+    text-decoration: underline;
+}
+
+.tinta {
+    position: absolute;
+    width: 120px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+.canto-top-esquerdo {
+    top: 0;
+    left: 0;
+    height: 20%;
+    width: 20%;
+}
+
+.canto-top-direito {
+    top: 0;
+    right: 0;
+    height: 20%;
+    width: 25%;
+}
+
+.canto-bottom-esquerdo {
+    bottom: 0;
+    left: 0;
+    height: 16%;
+    width: 20%;
+}
