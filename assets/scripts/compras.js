@@ -6,7 +6,6 @@ function renderCarrinho() {
   const tabela = document.querySelector("table");
   const linhas = tabela.querySelectorAll("tr");
 
-  // Remove todas as linhas de produtos, mantendo o cabeçalho
   linhas.forEach((linha, index) => {
     if (index > 0) linha.remove();
   });
@@ -35,16 +34,22 @@ function renderCarrinho() {
     tabela.appendChild(novaLinha);
   });
 
-  atualizarValorTotal(); // <<< atualiza o valor total sempre que renderiza
+  atualizarValorTotal();
 }
 
-// Aumenta a quantidade
+// Atualiza a barra de etapas
+function mudarEtapa(index) {
+  const steps = document.querySelectorAll('.step');
+  steps.forEach((step, i) => {
+    step.classList.toggle('active', i <= index);
+  });
+}
+
+// Aumenta e diminui quantidade
 function incrementar(index) {
   carrinho[index].quantidade++;
   salvarECriar();
 }
-
-// Diminui a quantidade ou remove se for 1
 function decrementar(index) {
   if (carrinho[index].quantidade > 1) {
     carrinho[index].quantidade--;
@@ -53,14 +58,10 @@ function decrementar(index) {
   }
   salvarECriar();
 }
-
-// Remove o produto do carrinho
 function remover(index) {
   carrinho.splice(index, 1);
   salvarECriar();
 }
-
-// Salva no localStorage e renderiza
 function salvarECriar() {
   localStorage.setItem('carrinho', JSON.stringify(carrinho));
   renderCarrinho();
@@ -68,13 +69,14 @@ function salvarECriar() {
 
 // Exibe opções de pagamento
 function mostrarPagamento() {
+  mudarEtapa(1); // Vai para etapa "Identificação"
   document.getElementById('opcoes-pagamento').style.display = 'block';
   document.getElementById("form-cartao").style.display = "none";
   document.getElementById("form-pix").style.display = "none";
   document.getElementById("form-boleto").style.display = "none";
 }
 
-// Pagamento
+// Botões das formas de pagamento
 const botoesPagamento = document.querySelectorAll(".pagamento-btn");
 botoesPagamento.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -92,7 +94,7 @@ botoesPagamento.forEach((btn) => {
   });
 });
 
-// Submissão do cartão
+// Submissão do pagamento com cartão
 const formCartao = document.getElementById("cartao-form");
 formCartao.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -103,34 +105,42 @@ formCartao.addEventListener("submit", function (e) {
   const cvv = document.getElementById("cvv-cartao").value.trim();
 
   if (nome && numero && validade && cvv) {
-    alert("Pagamento realizado com sucesso! Pode ir à loja buscar a tinta.");
-    formCartao.reset();
-    document.getElementById("form-cartao").style.display = "none";
-    document.getElementById("opcoes-pagamento").style.display = "none";
-    localStorage.removeItem('carrinho');
-    carrinho = [];
-    renderCarrinho();
+    mudarEtapa(2); // Vai pra "Pagamento"
+    setTimeout(() => {
+      mudarEtapa(3); // Vai pra "Concluído"
+      alert("Pagamento realizado com sucesso! Pode ir à loja buscar a tinta.");
+      formCartao.reset();
+      document.getElementById("form-cartao").style.display = "none";
+      document.getElementById("opcoes-pagamento").style.display = "none";
+      localStorage.removeItem('carrinho');
+      carrinho = [];
+      renderCarrinho();
+    }, 2000);
   } else {
     alert("Por favor, preencha todos os campos do cartão.");
   }
 });
 
-// Clique no botão de boleto
+// Pagamento por boleto
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("pagar-boleto").addEventListener("click", () => {
-    alert("Boleto gerado com sucesso! Após o pagamento, pode ir à loja buscar a tinta.");
-    document.getElementById("form-boleto").style.display = "none";
-    document.getElementById("opcoes-pagamento").style.display = "none";
-    localStorage.removeItem('carrinho');
-    carrinho = [];
-    renderCarrinho();
+    mudarEtapa(2); // Vai pra "Pagamento"
+    setTimeout(() => {
+      mudarEtapa(3); // Vai pra "Concluído"
+      alert("Boleto gerado com sucesso! Após o pagamento, pode ir à loja buscar a tinta.");
+      document.getElementById("form-boleto").style.display = "none";
+      document.getElementById("opcoes-pagamento").style.display = "none";
+      localStorage.removeItem('carrinho');
+      carrinho = [];
+      renderCarrinho();
+    }, 2000);
   });
 
-  // Renderiza os produtos ao carregar
+  // Renderiza carrinho ao carregar
   renderCarrinho();
 });
 
-// Atualiza o valor total na tela
+// Atualiza valor total
 function atualizarValorTotal() {
   let total = carrinho.reduce((soma, produto) => {
     return soma + (produto.preco * produto.quantidade);
