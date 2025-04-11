@@ -35,6 +35,7 @@ function renderCarrinho() {
   });
 
   atualizarValorTotal();
+  atualizarBotaoFinalizar(); // Habilita/desabilita o botão de finalizar
 }
 
 // Atualiza a barra de etapas
@@ -67,9 +68,38 @@ function salvarECriar() {
   renderCarrinho();
 }
 
+// Atualiza o valor total do carrinho
+function atualizarValorTotal() {
+  let total = carrinho.reduce((soma, produto) => {
+    return soma + (produto.preco * produto.quantidade);
+  }, 0);
+
+  document.getElementById("valor-total").textContent = total.toFixed(2).replace('.', ',');
+}
+
+// Habilita/desabilita botão de finalizar compra
+function atualizarBotaoFinalizar() {
+  const botaoFinalizar = document.querySelector(".finalizar-container .finalizar-btn");
+
+  if (carrinho.length === 0) {
+    botaoFinalizar.disabled = true;
+    botaoFinalizar.style.opacity = 0.5;
+    botaoFinalizar.style.cursor = "not-allowed";
+  } else {
+    botaoFinalizar.disabled = false;
+    botaoFinalizar.style.opacity = 1;
+    botaoFinalizar.style.cursor = "pointer";
+  }
+}
+
 // Exibe opções de pagamento
 function mostrarPagamento() {
-  mudarEtapa(1); // Vai para etapa "Identificação"
+  if (carrinho.length === 0) {
+    alert("Seu carrinho está vazio. Adicione produtos antes de finalizar a compra.");
+    return;
+  }
+
+  mudarEtapa(1); // Etapa "Identificação"
   document.getElementById('opcoes-pagamento').style.display = 'block';
   document.getElementById("form-cartao").style.display = "none";
   document.getElementById("form-pix").style.display = "none";
@@ -136,15 +166,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2000);
   });
 
-  // Renderiza carrinho ao carregar
   renderCarrinho();
 });
-
-// Atualiza valor total
-function atualizarValorTotal() {
-  let total = carrinho.reduce((soma, produto) => {
-    return soma + (produto.preco * produto.quantidade);
-  }, 0);
-
-  document.getElementById("valor-total").textContent = total.toFixed(2).replace('.', ',');
-}
