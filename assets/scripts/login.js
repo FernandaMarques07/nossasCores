@@ -13,9 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            // Aqui você pode adicionar lógica real de autenticação futuramente
             alert("Login bem-sucedido! Bem vindo");
-            window.location.href = "index.html"; // ajuste conforme a estrutura do seu projeto
+            window.location.href = "index.html";
         });
     }
 });

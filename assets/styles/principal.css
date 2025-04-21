@@ -1,18 +1,15 @@
-/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos para o corpo */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
 }
 
-/* Menu de Navegação */
 nav {
     position: fixed;
     top: 0;
@@ -43,7 +40,7 @@ nav .logo-img {
     width: auto;
 }
 
-/* Menu de Navegação - Itens */
+/* Navegação - Itens */
 nav .menu {
     list-style: none;
     display: flex;
@@ -56,11 +53,15 @@ nav .menu li a {
     font-size: 18px;
 }
 
+.carrinho{
+    height: 84px;
+    width: 84px;
+}
+
 nav .menu li a:hover {
     text-decoration: underline;
 }
 
-/* Frase de Efeito */
 .frase {
     position: fixed;
     top: 60px;
@@ -83,7 +84,6 @@ nav .menu li a:hover {
     margin: 0;
 }
 
-/* Foto de Anúncio */
 .foto-container {
     margin-top: 100px;
 }
@@ -94,7 +94,6 @@ nav .menu li a:hover {
     object-fit: cover;
 }
 
-/* Catálogo de Tintas */
 .catalogo {
     display: flex;
     justify-content: center;
@@ -130,7 +129,6 @@ nav .menu li a:hover {
     color: #333;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 10px 0;
@@ -139,7 +137,7 @@ footer {
     margin-top: 50px;
 }
 
-/* Estilo das setas de navegação */
+/* setas - navegação */
 .catalogo-container {
     position: relative;
     display: flex;
@@ -175,7 +173,7 @@ footer {
     right: 10px;
 }
 
-/* Localização - Visite a Loja */
+/* Localização */
 .visite-loja {
     display: flex;
     justify-content: space-between;
@@ -204,8 +202,6 @@ footer {
     height: auto;
 }
 
-/* --- Nova seção de estilos --- */
-
 .catalogo-estilos {
     display: flex;
     gap: 20px;
@@ -214,7 +210,6 @@ footer {
     flex-wrap: wrap;
 }
 
-/* Destaque de Cores (Esquerda) */
 .destaque-cores {
     flex: 1 1 50%;
     min-width: 300px;
@@ -226,7 +221,7 @@ footer {
     display: flex;
     align-items: flex-end;
     padding: 20px;
-    background-image: url('../images/brilhantes.png'); /* Usando a imagem de fundo */
+    background-image: url('../images/brilhantes.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -238,7 +233,7 @@ footer {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    z-index: 1; /* Garante que o texto fique sobre a imagem */
+    z-index: 1;
 }
 
 .texto-destaque h2 {
@@ -264,10 +259,9 @@ footer {
     font-size: 1.5em;
     text-decoration: none;
     border-radius: 5px;
-    z-index: 2; /* Garantir que o botão fique sobre a imagem */
+    z-index: 2;
 }
-
-/* Grid de Tipos de Cores (Direita) */
+/* Grid (Direita) */
 .tipos-cores-grid {
     flex: 1 1 40%;
     min-width: 280px;
@@ -290,13 +284,12 @@ footer {
 
 .cor-preview {
     height: 70%;
-    background-color: #ddd; /* fallback para carregamento */
+    background-color: #ddd; 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* Imagens para os blocos de cores */
 .fosca .cor-preview {
     background-image: url('../images/fosca.png');
 }

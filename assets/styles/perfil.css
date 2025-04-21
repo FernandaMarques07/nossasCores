@@ -10,7 +10,6 @@ h1 {
 .confirmation-container {
   max-width: 100%;
   box-sizing: border-box;
-  /* Adicionado padding igual em ambos os lados */
 }
 .data-group {
   margin-bottom: 20px;
@@ -21,7 +20,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  box-sizing: border-box; /* Garante que padding não afete a largura */
+  box-sizing: border-box; 
 }
 .data-item {
   display: flex;

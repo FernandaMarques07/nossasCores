@@ -1,4 +1,3 @@
-// Carrega o carrinho do localStorage
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
 // Atualiza e exibe os produtos no carrinho
@@ -35,10 +34,10 @@ function renderCarrinho() {
   });
 
   atualizarValorTotal();
-  atualizarBotaoFinalizar(); // Habilita/desabilita o botão de finalizar
+  atualizarBotaoFinalizar();
 }
 
-// Atualiza a barra de etapas
+// barra de etapas
 function mudarEtapa(index) {
   const steps = document.querySelectorAll('.step');
   steps.forEach((step, i) => {
@@ -46,7 +45,7 @@ function mudarEtapa(index) {
   });
 }
 
-// Aumenta e diminui quantidade
+// quantidade
 function incrementar(index) {
   carrinho[index].quantidade++;
   salvarECriar();
@@ -68,7 +67,7 @@ function salvarECriar() {
   renderCarrinho();
 }
 
-// Atualiza o valor total do carrinho
+// Atualiza - total do carrinho
 function atualizarValorTotal() {
   let total = carrinho.reduce((soma, produto) => {
     return soma + (produto.preco * produto.quantidade);
@@ -77,7 +76,7 @@ function atualizarValorTotal() {
   document.getElementById("valor-total").textContent = total.toFixed(2).replace('.', ',');
 }
 
-// Habilita/desabilita botão de finalizar compra
+// Habilita/desabilita - finalizar compra
 function atualizarBotaoFinalizar() {
   const botaoFinalizar = document.querySelector(".finalizar-container .finalizar-btn");
 
@@ -92,21 +91,21 @@ function atualizarBotaoFinalizar() {
   }
 }
 
-// Exibe opções de pagamento
+// Pagamentos
 function mostrarPagamento() {
   if (carrinho.length === 0) {
     alert("Seu carrinho está vazio. Adicione produtos antes de finalizar a compra.");
     return;
   }
 
-  mudarEtapa(1); // Etapa "Identificação"
+  mudarEtapa(1); // Identificação
   document.getElementById('opcoes-pagamento').style.display = 'block';
   document.getElementById("form-cartao").style.display = "none";
   document.getElementById("form-pix").style.display = "none";
   document.getElementById("form-boleto").style.display = "none";
 }
 
-// Botões das formas de pagamento
+// Formas de pagamento
 const botoesPagamento = document.querySelectorAll(".pagamento-btn");
 botoesPagamento.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -124,7 +123,7 @@ botoesPagamento.forEach((btn) => {
   });
 });
 
-// Submissão do pagamento com cartão
+// Eniva - cartão
 const formCartao = document.getElementById("cartao-form");
 formCartao.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -135,9 +134,9 @@ formCartao.addEventListener("submit", function (e) {
   const cvv = document.getElementById("cvv-cartao").value.trim();
 
   if (nome && numero && validade && cvv) {
-    mudarEtapa(2); // Vai pra "Pagamento"
+    mudarEtapa(2); // Vai pra Pagamento
     setTimeout(() => {
-      mudarEtapa(3); // Vai pra "Concluído"
+      mudarEtapa(3); // Vai pra Concluído
       alert("Pagamento realizado com sucesso! Pode ir à loja buscar a tinta.");
       formCartao.reset();
       document.getElementById("form-cartao").style.display = "none";
@@ -154,9 +153,9 @@ formCartao.addEventListener("submit", function (e) {
 // Pagamento por boleto
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("pagar-boleto").addEventListener("click", () => {
-    mudarEtapa(2); // Vai pra "Pagamento"
+    mudarEtapa(2); // Vai pra Pagamento
     setTimeout(() => {
-      mudarEtapa(3); // Vai pra "Concluído"
+      mudarEtapa(3); // Vai pra Concluído
       alert("Boleto gerado com sucesso! Após o pagamento, pode ir à loja buscar a tinta.");
       document.getElementById("form-boleto").style.display = "none";
       document.getElementById("opcoes-pagamento").style.display = "none";

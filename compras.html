@@ -9,7 +9,6 @@
 </head>
 <body>
 
-   <!-- Menu de Navegação -->
    <nav>
     <div class="logo">
         <a href="./index.html"><img src="./assets/images/logo.png" alt="Minha Loja" class="logo-img"></a>
@@ -19,12 +18,11 @@
     </ul>
 </nav>
 
-<!-- Frase de Efeito -->
 <section class="frase">
     <p>Que tal renovar um cantinho da sua casa? Use Nossas Cores.</p>
 </section>
 
-<br><br><br><!-- Preguiça de mexer no css -->
+<br><br><br>
 
   <div class="container">
     <h1>CARRINHO</h1>
@@ -78,18 +76,14 @@
       <h3>Total: R$ <span id="valor-total">0,00</span></h3>
     </div>    
 
-    <!-- Botão para continuar comprando -->
 <div class="continuar-container">
   <button class="finalizar-btn" onclick="window.location.href='index.html#catalogoPrincipal'">Continuar comprando</button>
 </div>
 
-<!-- Botão para finalizar a compra -->
 <div class="finalizar-container">
   <button class="finalizar-btn" onclick="mostrarPagamento()">Finalizar compra</button>
 </div>
 
-    
-    <!-- Opções de pagamento (inicialmente ocultas) -->
     <div id="opcoes-pagamento" class="pagamento-opcoes" style="display: none;">
       <h2>Escolha a forma de pagamento:</h2>
       <button class="pagamento-btn">Cartão de Crédito</button>
@@ -97,7 +91,7 @@
       <button class="pagamento-btn">Boleto</button>
     </div>
 
-    <!-- Formulário de Cartão de Crédito (inicialmente oculto) -->
+    <!-- Cartão de Crédito -->
     <div id="form-cartao" class="form-cartao" style="display: none; margin-top: 20px;">
       <h3>Dados do Cartão</h3>
       <form id="cartao-form">
@@ -109,15 +103,14 @@
       </form>
     </div>
     
-    <!-- Seção Pix com QR Code (inicialmente oculta) -->
+    <!-- Pix -->
     <div id="form-pix" style="display: none; margin-top: 20px;">
       <h3>Pagamento via Pix</h3>
       <p>Escaneie o QR Code com seu aplicativo para pagar:</p>
-      <!-- Altere o caminho da imagem para o seu QR Code -->
       <img src="./assets/images/qrcode.png" alt="QR Code Pix" style="width:200px;height:200px;"><br>
     </div>
     
-    <!-- Seção Boleto (inicialmente oculta) -->
+    <!-- Boleto -->
     <div id="form-boleto" style="display: none; margin-top: 20px;">
       <h3>Boleto Bancário</h3>
       <p><strong>Banco:</strong> Cores Brasil</p>

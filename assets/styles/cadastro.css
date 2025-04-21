@@ -17,7 +17,7 @@ body {
     background: #ffffff;
 }
 
-/* Lado esquerdo com imagem de fundo */
+/* Lado esquerdo - imagem de fundo */
 .left-side {
     width: 40%;
     background: #fff;
@@ -37,7 +37,7 @@ body {
     z-index: 0;
 }
 
-/* Lado direito com formulário */
+/* Lado direito - formulário */
 .right-side {
     width: 30%;
     background: #ffffff;

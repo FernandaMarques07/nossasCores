@@ -16,9 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            // Aqui você pode adicionar lógica real de cadastro futuramente
             alert("Cadastro realizado com sucesso! Faça seu Login novamente");
-            window.location.href = "login.html"; // ajuste conforme a estrutura do seu projeto
+            window.location.href = "login.html"; 
         });
     }
 });
