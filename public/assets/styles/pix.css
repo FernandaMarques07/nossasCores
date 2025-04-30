@@ -1,0 +1,51 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #4b0082;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.info {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-left: 4px solid #4b0082;
+}
+
+.info strong {
+    display: block;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.botao-confirmar {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    padding: 12px;
+    background-color: #4b0082;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.botao-confirmar:hover {
+    background-color: #36005d;
+}
